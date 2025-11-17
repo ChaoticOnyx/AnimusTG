@@ -428,6 +428,20 @@
 /obj/structure/chair/sofa/left/maroon,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/space/has_grav/hauntedtradingpost/employees)
+"de" = (
+/obj/structure/cable/multilayer,
+/obj/structure/cable/layer1,
+/obj/structure/safe/floor,
+/obj/item/sticker/syndicate/apc,
+/obj/item/grenade/empgrenade,
+/obj/item/book/granter/crafting_recipe/donk_secret_recipe,
+/obj/item/ai_module/law/core/full/cybersun,
+/obj/item/reagent_containers/condiment/donksauce,
+/mob/living/basic/cybersun_ai_core{
+	donk_ai_master = 1
+	},
+/turf/open/floor/plating/reinforced,
+/area/ruin/space/has_grav/hauntedtradingpost/aicore)
 "dj" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Glass Airlock"
@@ -1716,20 +1730,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hauntedtradingpost/employees/workstation)
-"pb" = (
-/obj/structure/cable/multilayer,
-/obj/structure/cable/layer1,
-/obj/structure/safe/floor,
-/obj/item/sticker/syndicate/apc,
-/obj/item/grenade/empgrenade,
-/obj/item/book/granter/crafting_recipe/donk_secret_recipe,
-/obj/item/ai_module/core/full/cybersun,
-/obj/item/reagent_containers/condiment/donksauce,
-/mob/living/basic/cybersun_ai_core{
-	donk_ai_master = 1
-	},
-/turf/open/floor/plating/reinforced,
-/area/ruin/space/has_grav/hauntedtradingpost/aicore)
 "pc" = (
 /obj/structure/table/wood,
 /obj/item/cardpack/series_one{
@@ -1935,14 +1935,6 @@
 "qR" = (
 /turf/template_noop,
 /area/template_noop)
-"qY" = (
-/obj/item/tank/jetpack/security{
-	name = "red jetpack (oxygen)"
-	},
-/obj/item/tank/internals/oxygen/red,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hauntedtradingpost/maint)
 "ra" = (
 /obj/machinery/light/warm/directional/south,
 /obj/structure/cable/layer1,
@@ -2413,6 +2405,16 @@
 /obj/structure/cable/layer1,
 /turf/template_noop,
 /area/ruin/space/has_grav/hauntedtradingpost/employees/corridor)
+"vb" = (
+/obj/structure/cable/layer1,
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/ai_module/law/supplied/protect_station{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/machinery/light/red/dim/directional/east,
+/turf/open/floor/catwalk_floor/iron_dark,
+/area/ruin/space/has_grav/hauntedtradingpost/aicore)
 "ve" = (
 /obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
 /turf/open/floor/plating,
@@ -4287,16 +4289,6 @@
 /obj/effect/spawner/random/medical/minor_healing,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/ruin/space/has_grav/hauntedtradingpost/public/corridor)
-"Lz" = (
-/obj/structure/cable/layer1,
-/obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/ai_module/supplied/protect_station{
-	pixel_x = 2;
-	pixel_y = 5
-	},
-/obj/machinery/light/red/dim/directional/east,
-/turf/open/floor/catwalk_floor/iron_dark,
-/area/ruin/space/has_grav/hauntedtradingpost/aicore)
 "LC" = (
 /obj/structure/cable/layer1,
 /obj/machinery/door/firedoor,
@@ -5853,6 +5845,14 @@
 /obj/machinery/duct,
 /turf/open/floor/carpet/orange,
 /area/ruin/space/has_grav/hauntedtradingpost/public/corridor)
+"Yl" = (
+/obj/item/tank/jetpack/security{
+	name = "red jetpack (oxygen)"
+	},
+/obj/item/tank/internals/oxygen/red,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/hauntedtradingpost/maint)
 "Yq" = (
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/item/bedsheet/syndie{
@@ -6779,7 +6779,7 @@ iv
 iv
 ot
 XW
-pb
+de
 MR
 tl
 YR
@@ -7028,7 +7028,7 @@ hW
 Xh
 yi
 CZ
-qY
+Yl
 yi
 qR
 "}
@@ -7041,7 +7041,7 @@ hV
 vx
 tm
 Gg
-Lz
+vb
 bu
 cv
 gb
