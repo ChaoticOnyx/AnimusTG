@@ -60,6 +60,12 @@
 		/obj/structure/flora/tree/pine/style_random = 2,
 	)
 
+	weighted_flora_spawn_list = list(
+		/obj/structure/flora/ash/chilly = 2,
+		/obj/structure/flora/grass/both/style_random = 6,
+		/obj/structure/flora/tree/pine/style_random = 2,
+	)
+
 /// Surface snow generator variant for forested station trait, WITH FORESTSSSS
 /datum/map_generator/cave_generator/icemoon/surface/forested
 	initial_closed_chance = 10
