@@ -174,6 +174,11 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/plasma
 	material_type = /datum/material/plasma
 	walltype = /turf/closed/wall/mineral/plasma
+	//Plasmaman absorbing stuff
+	/// How long it takes to absorb it
+	var/delay = 1 SECONDS
+	///Sound that plays when you start absorbing
+	var/absorb_sound = 'sound/misc/plasmaabsorb.ogg'
 
 /obj/item/stack/sheet/mineral/plasma/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins licking \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -187,6 +192,55 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 /obj/item/stack/sheet/mineral/plasma/get_main_recipes()
 	. = ..()
 	. += GLOB.plasma_recipes
+
+/obj/item/stack/sheet/mineral/plasma/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	. = ..()
+	if(user.combat_mode)
+		return
+	if(!ishuman(interacting_with))
+		return
+	if(DOING_INTERACTION_WITH_TARGET(user, interacting_with))
+		return ITEM_INTERACT_BLOCKING
+	if(try_absorb(interacting_with, user, FALSE))
+		return ITEM_INTERACT_SUCCESS
+	else
+		return ITEM_INTERACT_BLOCKING
+
+/obj/item/stack/sheet/mineral/plasma/proc/try_absorb_checks(mob/living/carbon/human/absorbing_mob, mob/living/user, absorb_zone)
+	if(!(absorb_zone in absorbing_mob.get_all_limbs()))
+		return FALSE
+	if(absorbing_mob.get_bodypart(absorb_zone).limb_id != SPECIES_PLASMAMAN)
+		return FALSE
+	if(!get_location_accessible(absorbing_mob, absorb_zone))
+		absorbing_mob.balloon_alert(user, "covered")
+		return FALSE
+	return TRUE
+
+/obj/item/stack/sheet/mineral/plasma/proc/try_absorb(mob/living/carbon/human/absorbing_mob, mob/living/user, silent = FALSE)
+	if(absorb_sound != null)
+		playsound(absorbing_mob, absorb_sound, 100, TRUE)
+	var/absorb_zone = check_zone(user.zone_selected)
+	if(!try_absorb_checks(absorbing_mob, user, absorb_zone))
+		return FALSE
+	absorbing_mob.balloon_alert(user, "absorbing plasma...")
+	if(absorbing_mob == user)
+		if(!silent)
+			user.visible_message(
+				span_notice("[user] starts to absorb a sheet of plasma..."),
+				span_notice("You begin aborbing the plasma..."),
+				visible_message_flags = ALWAYS_SHOW_SELF_MESSAGE,
+			)
+	else
+		if(!silent)
+			user.visible_message(
+				span_notice("[user] starts to apply a sheet of plasma on [absorbing_mob]..."),
+				span_notice("You begin applying the plasma on [absorbing_mob]..."),
+				visible_message_flags = ALWAYS_SHOW_SELF_MESSAGE,
+			)
+	if(!use_tool(absorbing_mob, user, delay, 1, extra_checks = CALLBACK(src, PROC_REF(try_absorb_checks), absorbing_mob, user, absorb_zone)))
+		return FALSE
+	absorbing_mob.reagents.add_reagent(/datum/reagent/toxin/plasma, 20)
+	return TRUE
 
 /obj/item/stack/sheet/mineral/plasma/five
 	amount = 5
