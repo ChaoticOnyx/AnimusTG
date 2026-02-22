@@ -59,6 +59,22 @@
 	color_source = null
 	dyable = FALSE
 
+/obj/item/organ/tail/tajara
+	name = "tajara tail"
+
+	dna_block = /datum/dna_block/feature/accessory/tail_tajara
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/tajara
+	restyle_flags = EXTERNAL_RESTYLE_FLESH
+
+	wag_flags = WAG_ABLE
+
+/obj/item/organ/tail/tajara/get_butt_sprite()
+	return icon('icons/mob/butts.dmi', BUTT_SPRITE_CAT)
+
+/datum/bodypart_overlay/mutant/tail/tajara
+	feature_key = FEATURE_TAIL_TAJARA
+	sprite_datum = /datum/sprite_accessory/tails/tajara
+
 /obj/item/organ/tongue/tajara
 	name = "tajara tongue"
 	desc = "A fleshy, spiky muscle mostly used for licking fur."
@@ -124,18 +140,27 @@
 	icon_state = "eyes_vox"
 	penlight_message = "have small pupils with no scleras"
 
-/obj/item/organ/tail/tajara
-	name = "tajara tail"
+/obj/item/organ/lungs/vox
+	name = "vox lungs"
+	desc = "A celadon alien-looking organ. It can only breathe pure nitrogen."
+	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon_state = "lungs_vox"
+	breath_noise = "an unnatural breathing sound"
+	safe_oxygen_min = 0 // We don't breathe this
+	safe_oxygen_max = 0.05
+	oxy_damage_type = TOX // In fact, for us it's basically like breathing plasma
+	safe_nitro_min = 16 // We breathe THIS!
 
-	dna_block = /datum/dna_block/feature/accessory/tail_tajara
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/tajara
-	restyle_flags = EXTERNAL_RESTYLE_FLESH
+#define SMOKER_ORGAN_HEALTH (STANDARD_ORGAN_THRESHOLD * 0.75)
+#define SMOKER_LUNG_HEALING (STANDARD_ORGAN_HEALING * 0.75)
 
-	wag_flags = WAG_ABLE
+/obj/item/organ/lungs/vox/vox_smoker
+	name = "smoker vox lungs"
+	desc = "A discolored alien-looking organ. It can only breathe pure nitrogen. And nicotine, apparently."
+	icon_state = "lungs_vox_smoker"
+	breath_noise = "an unnatural and rough breathing sound"
+	maxHealth = SMOKER_ORGAN_HEALTH
+	healing_factor = SMOKER_LUNG_HEALING
 
-/obj/item/organ/tail/tajara/get_butt_sprite()
-	return icon('icons/mob/butts.dmi', BUTT_SPRITE_CAT)
-
-/datum/bodypart_overlay/mutant/tail/tajara
-	feature_key = FEATURE_TAIL_TAJARA
-	sprite_datum = /datum/sprite_accessory/tails/tajara
+#undef SMOKER_ORGAN_HEALTH
+#undef SMOKER_LUNG_HEALING

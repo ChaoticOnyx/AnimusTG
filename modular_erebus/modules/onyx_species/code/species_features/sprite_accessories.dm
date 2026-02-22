@@ -284,3 +284,17 @@
 /datum/sprite_accessory/hair/skrell/both_behind_long_dmg_r
 	name = "Long Damaged Headtails Behind (right)"
 	icon_state = "skrell_both_behind_long_dmg_r"
+
+// Vox Hairstyles
+/datum/sprite_accessory/hair/vox
+	name = "Bald"
+	icon = 'modular_erebus/modules/onyx_species/icons/vox/hair.dmi'
+	icon_state = "bald"
+
+/datum/sprite_accessory/hair/vox/long
+	name = "Vox Quills Long"
+	icon_state = "vox_quills_long"
+
+/datum/sprite_accessory/hair/vox/short
+	name = "Vox Quills Short"
+	icon_state = "vox_quills_short"

@@ -8,8 +8,10 @@
 #define FEMALE_SPRITE_LIST "female_sprites"
 /// Tajara accessory sprites, Erebus-added
 #define TAJARA_SPRITE_LIST "tajara_sprites"
-/// Tajara accessory sprites, Erebus-added
+/// Skrell accessory sprites, Erebus-added
 #define SKRELL_SPRITE_LIST "skrell_sprites"
+/// Vox accessory sprites, Erebus-added
+#define VOX_SPRITE_LIST "vox_sprites"
 
 /// Use this to init a sprite accessory list for a feature where mobs are required to have one selected
 #define INIT_ACCESSORY(sprite_accessory) init_sprite_accessory_subtypes(sprite_accessory, add_blank = FALSE)[DEFAULT_SPRITE_LIST]
@@ -20,6 +22,7 @@
 	var/list/all_hairstyles_list //! stores all /datum/sprite_accessory/hair indexed by name
 	var/list/hairstyles_tajara_list //! stores /datum/sprite_accessory/hair/tajara indexed by name
 	var/list/hairstyles_skrell_list //! stores /datum/sprite_accessory/hair/skrell indexed by name
+	var/list/hairstyles_vox_list //! stores /datum/sprite_accessory/hair/vox indexed by name
 	var/list/all_facial_hairstyles_list // //! stores all /datum/sprite_accessory/facial_hair indexed by name
 	var/list/facial_hairstyles_tajara_list //! stores /datum/sprite_accessory/facial_hair/tajara indexed by name
 
@@ -29,6 +32,7 @@
 	all_hairstyles_list = hair_lists[ALL_SPRITE_LIST]
 	hairstyles_tajara_list = hair_lists[TAJARA_SPRITE_LIST]
 	hairstyles_skrell_list = hair_lists[SKRELL_SPRITE_LIST]
+	hairstyles_vox_list = hair_lists[VOX_SPRITE_LIST]
 
 	var/facial_hair_lists = init_sprite_accessory_subtypes(/datum/sprite_accessory/facial_hair)
 	all_facial_hairstyles_list = facial_hair_lists[ALL_SPRITE_LIST]
@@ -48,6 +52,7 @@
 		FEMALE_SPRITE_LIST = list(),
 		TAJARA_SPRITE_LIST = list(),
 		SKRELL_SPRITE_LIST = list(),
+		VOX_SPRITE_LIST = list(),
 	)
 
 	for(var/path in subtypesof(prototype))
@@ -63,6 +68,9 @@
 			continue
 		if(istype(accessory, /datum/sprite_accessory/hair/skrell))
 			returnable_list[SKRELL_SPRITE_LIST][accessory.name] = accessory
+			continue
+		if(istype(accessory, /datum/sprite_accessory/hair/vox))
+			returnable_list[VOX_SPRITE_LIST][accessory.name] = accessory
 			continue
 
 		if(accessory.icon_state)
