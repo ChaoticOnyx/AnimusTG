@@ -140,7 +140,8 @@
 
 /datum/species/skrell/get_species_description()
 	return "The Skrell are amphibious humanoids from the humid world of Querr'balak. \
-		They are primarily intellectuals, and their vegetarian diet checks out with that."
+		They are primarily intellectuals, and their vegetarian diet checks out with that. \
+		Despite their weak physique, Skrell have a connection to the Noosphere, which allows them to communicate remotely."
 
 /datum/species/skrell/get_species_lore()
 	return list(
@@ -176,6 +177,12 @@
 		SPECIES_PERK_NAME = "Hard Vegetarian",
 		SPECIES_PERK_DESC = "The Skrell's bodies are unable to process animal nutrients and ethanol. \
 			As such, meats and especially alcohol are toxic to them. Stick to a strict vegetarian diet.",
+		),
+		list(
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
+		SPECIES_PERK_ICON = FA_ICON_BRAIN,
+		SPECIES_PERK_NAME = "Noosphere",
+		SPECIES_PERK_DESC = "All Skrell possess a connection to the Noosphere, which allows them to communicate remotely, even when unconscious.",
 		))
 
 	return to_add

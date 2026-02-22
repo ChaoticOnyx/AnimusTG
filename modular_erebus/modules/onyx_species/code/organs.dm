@@ -11,6 +11,7 @@
 	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
 	icon_state = "brain_skrell"
 	shade_color = "deep blue"
+	actions_types = list(/datum/action/cooldown/mob_cooldown/noosphere)
 
 /obj/item/organ/brain/vox
 	name = "vox brain"
@@ -93,6 +94,16 @@
 		new /regex("Р+", "g") = "РРР",
 	)
 
+/obj/item/organ/tongue/tajara/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/speechmod, replacements = speech_replacements, should_modify_speech = CALLBACK(src, PROC_REF(should_modify_speech)))
+
+/obj/item/organ/tongue/tajara/get_possible_languages()
+	RETURN_TYPE(/list)
+	. = ..()
+	. += /datum/language/tajara
+	return .
+
 /obj/item/organ/tongue/skrell
 	name = "skrell tongue"
 	desc = "A slimy muscle mostly used for snobby talking."
@@ -104,6 +115,12 @@
 	toxic_foodtypes = TOXIC | GORE | MEAT | ALCOHOL | SEAFOOD | BUGS
 	languages_native = list(/datum/language/skrell)
 
+/obj/item/organ/tongue/skrell/get_possible_languages()
+	RETURN_TYPE(/list)
+	. = ..()
+	. += /datum/language/skrell
+	return .
+
 /obj/item/organ/tongue/vox
 	name = "vox tongue"
 	desc = "A fleshy muscle mostly used for screeching."
@@ -112,9 +129,11 @@
 	say_mod = "screeches"
 	languages_native = list(/datum/language/vox)
 
-/obj/item/organ/tongue/tajara/Initialize(mapload)
+/obj/item/organ/tongue/vox/get_possible_languages()
+	RETURN_TYPE(/list)
 	. = ..()
-	AddComponent(/datum/component/speechmod, replacements = speech_replacements, should_modify_speech = CALLBACK(src, PROC_REF(should_modify_speech)))
+	. += /datum/language/vox
+	return .
 
 /obj/item/organ/eyes/night_vision/tajara
 	name = "tajara eyes"
