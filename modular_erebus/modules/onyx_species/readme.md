@@ -56,6 +56,7 @@
 
 - `code/modules/reagents/chemistry/reagents/other_reagents.dm` -- аналогично.
 -- `/datum/reagent/barbers_aid/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume, show_message=TRUE, touch_protection = 0)`
+== `/datum/reagent/baldium/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume, show_message=TRUE, touch_protection = 0)`
 
 **Изменение TGUI:**
 - `tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\species_features.tsx` -- добавлено что-то там, чтобы работал выбор хвостов и ушей таяр в лодауте. I don't dig TGUI.
