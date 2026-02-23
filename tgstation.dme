@@ -6848,6 +6848,7 @@
 #include "modular_erebus\master_files\code\datums\keybindings\human.dm"
 #include "modular_erebus\master_files\code\datums\keybindings\living.dm"
 #include "modular_erebus\master_files\code\datums\keybindings\mob.dm"
+#include "modular_erebus\master_files\code\datums\mood_events\generic_positive_events.dm"
 #include "modular_erebus\master_files\code\game\objects\structures\mirror.dm"
 #include "modular_erebus\master_files\code\modules\client\preferences.dm"
 #include "modular_erebus\master_files\code\modules\client\preferences\species_features\basic.dm"
