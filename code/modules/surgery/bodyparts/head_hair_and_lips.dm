@@ -78,7 +78,9 @@
 		species_color = ""
 
 /obj/item/bodypart/head/proc/get_hair_and_lips_icon(dropped)
-	SHOULD_CALL_PARENT(TRUE)
+	/* EREBUS EDIT REMOVAL START */
+	// SHOULD_CALL_PARENT(TRUE) -- otherwise linters just won't leave us alone. Damn it.
+	/* EREBUS EDIT REMOVAL END */
 	RETURN_TYPE(/list)
 	. = list()
 

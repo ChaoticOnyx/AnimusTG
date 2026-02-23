@@ -31,6 +31,7 @@
 	name = "Tajara Small Ears"
 	icon_state = "small"
 
+// Tajara Hairstyles
 /datum/sprite_accessory/hair/tajara
 	name = "Bald"
 	icon = 'modular_erebus/modules/onyx_species/icons/tajara/hair.dmi'
@@ -96,6 +97,7 @@
 	name = "Tajara Fingerwave"
 	icon_state = "hair_fingerwave"
 
+// Tajara Facial Hairstyles
 /datum/sprite_accessory/facial_hair/tajara
 	name = "Shaved"
 	icon = 'modular_erebus/modules/onyx_species/icons/tajara/facial.dmi'
@@ -125,32 +127,174 @@
 	name = "Tajara Smallstache"
 	icon_state = "facial_smallstache"
 
+// Skrell Hairstyles
 /datum/sprite_accessory/hair/skrell
-	name = "Skrell Plain"
+	name = "Short Headtails"
 	icon = 'modular_erebus/modules/onyx_species/icons/skrell/hair.dmi'
 	icon_state = "skrell_hair_m"
 
-/datum/sprite_accessory/hair/skrell/female
-	name = "Skrell Plain (Female)"
+/datum/sprite_accessory/hair/skrell/hair_f
+	name = "Headtails"
 	icon_state = "skrell_hair_f"
-	gender = FEMALE
 
-/datum/sprite_accessory/hair/skrell/veryshort
-	name = "Skrell Very Short"
+/datum/sprite_accessory/hair/skrell/veryshort_s
+	name = "Very Short Headtails"
 	icon_state = "skrell_veryshort_s"
 
-/datum/sprite_accessory/hair/skrell/verylong
-	name = "Skrell Very Long"
+/datum/sprite_accessory/hair/skrell/verylong_s
+	name = "Long Headtails"
 	icon_state = "skrell_verylong_s"
 
 /datum/sprite_accessory/hair/skrell/hoop
-	name = "Skrell Hoop"
+	name = "Hoop Ponytail"
 	icon_state = "skrell_hoop"
 
 /datum/sprite_accessory/hair/skrell/backwater
-	name = "Skrell Backwater"
+	name = "Backwater Ponytail"
 	icon_state = "skrell_backwater"
 
 /datum/sprite_accessory/hair/skrell/reef
-	name = "Skrell Reef"
+	name = "Reef Ponytail"
 	icon_state = "skrell_reef"
+
+/datum/sprite_accessory/hair/skrell/tucked
+	name = "Short Tucked Headtails"
+	icon_state = "skrell_tucked"
+
+/datum/sprite_accessory/hair/skrell/straight_tuux
+	name = "Straight Tuux Headtails"
+	icon_state = "skrell_straight_tuux"
+
+/datum/sprite_accessory/hair/skrell/straight_tuux_long
+	name = "Long Straight Tuux Headtails"
+	icon_state = "skrell_straight_tuux_long"
+
+/datum/sprite_accessory/hair/skrell/long_tuux
+	name = "Wavy Tuux Headtails"
+	icon_state = "skrell_long_tuux"
+
+/datum/sprite_accessory/hair/skrell/short_tuux
+	name = "Short Tuux Headtails"
+	icon_state = "skrell_short_tuux"
+
+/datum/sprite_accessory/hair/skrell/slicked
+	name = "Short Slicked Headtails"
+	icon_state = "skrell_slicked"
+
+/datum/sprite_accessory/hair/skrell/left_emo_long
+	name = "Long Overeye Headtails (left)"
+	icon_state = "skrell_left_emo_long"
+
+/datum/sprite_accessory/hair/skrell/right_emo_long
+	name = "Long Overeye Headtails (right)"
+	icon_state = "skrell_right_emo_long"
+
+/datum/sprite_accessory/hair/skrell/left_emo
+	name = "Short Overeye Headtails (left)"
+	icon_state = "skrell_left_emo"
+
+/datum/sprite_accessory/hair/skrell/right_emo
+	name = "Short Overeye Headtails (right)"
+	icon_state = "skrell_right_emo"
+
+/datum/sprite_accessory/hair/skrell/left_behind
+	name = "Headtail Behind (left)"
+	icon_state = "skrell_left_behind"
+
+/datum/sprite_accessory/hair/skrell/right_behind
+	name = "Headtail Behind (right)"
+	icon_state = "skrell_right_behind"
+
+/datum/sprite_accessory/hair/skrell/right_behind_long
+	name = "Long Headtail Behind (right)"
+	icon_state = "skrell_right_behind_long"
+
+/datum/sprite_accessory/hair/skrell/left_behind_long
+	name = "Long Headtail Behind (left)"
+	icon_state = "skrell_left_behind_long"
+
+/datum/sprite_accessory/hair/skrell/both_behind
+	name = "Headtails Behind (both)"
+	icon_state = "skrell_both_behind"
+
+/datum/sprite_accessory/hair/skrell/both_behind_short
+	name = "Short Headtails Behind (both)"
+	icon_state = "skrell_both_behind_short"
+
+/datum/sprite_accessory/hair/skrell/both_behind_long
+	name = "Long Headtails Behind (both)"
+	icon_state = "skrell_both_behind_long"
+
+/datum/sprite_accessory/hair/skrell/reef_short
+	name = "Short Reef Ponytail"
+	icon_state = "skrell_reef_short"
+
+/datum/sprite_accessory/hair/skrell/short_mid_bun
+	name = "Skrell Short Bun"
+	icon_state = "skrell_short_mid_bun"
+
+/datum/sprite_accessory/hair/skrell/mid_bun
+	name = "Skrell Bun"
+	icon_state = "skrell_mid_bun"
+
+/datum/sprite_accessory/hair/skrell/long_mid_bun
+	name = "Skrell Long Bun"
+	icon_state = "skrell_long_mid_bun"
+
+/datum/sprite_accessory/hair/skrell/mullet
+	name = "Skrell Mullet"
+	icon_state = "skrell_mullet"
+
+/datum/sprite_accessory/hair/skrell/low_bun
+	name = "Skrell Low Bun"
+	icon_state = "skrell_low_bun"
+
+/datum/sprite_accessory/hair/skrell/loose_braid
+	name = "Braided Headtails"
+	icon_state = "skrell_loose_braid"
+
+/datum/sprite_accessory/hair/skrell/verylong_s_dmg_r
+	name = "Damaged Long Headtails (right)"
+	icon_state = "verylong_s_dmg_r"
+
+/datum/sprite_accessory/hair/skrell/verylong_s_dmg_l
+	name = "Damaged Long Headtails (left)"
+	icon_state = "verylong_s_dmg_l"
+
+/datum/sprite_accessory/hair/skrell/hair_f_dmg_r
+	name = "Damaged Headtails (right)"
+	icon_state = "skrell_hair_f_dmg_r"
+
+/datum/sprite_accessory/hair/skrell/hair_f_dmg_l
+	name = "Damaged Headtails (left)"
+	icon_state = "skrell_hair_f_dmg_l"
+
+/datum/sprite_accessory/hair/skrell/both_behind_dmg_r
+	name = "Damaged Headtails Behind (right)"
+	icon_state = "skrell_both_behind_dmg_r"
+
+/datum/sprite_accessory/hair/skrell/both_behind_dmg_l
+	name = "Damaged Headtails Behind (left)"
+	icon_state = "skrell_both_behind_dmg_l"
+
+/datum/sprite_accessory/hair/skrell/both_behind_long_dmg_l
+	name = "Long Damaged Headtails Behind (left)"
+	icon_state = "skrell_both_behind_long_dmg_l"
+
+/datum/sprite_accessory/hair/skrell/both_behind_long_dmg_r
+	name = "Long Damaged Headtails Behind (right)"
+	icon_state = "skrell_both_behind_long_dmg_r"
+
+// Vox Hairstyles
+/datum/sprite_accessory/hair/vox
+	name = "Bald"
+	icon = 'modular_erebus/modules/onyx_species/icons/vox/hair.dmi'
+	icon_state = "bald"
+
+/datum/sprite_accessory/hair/vox/long
+	name = "Vox Quills Long"
+	icon_state = "vox_quills_long"
+
+/datum/sprite_accessory/hair/vox/short
+	name = "Vox Quills Short"
+	icon_state = "vox_quills_short"

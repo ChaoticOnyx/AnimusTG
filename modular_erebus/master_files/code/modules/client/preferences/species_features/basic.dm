@@ -29,7 +29,7 @@
 
 /datum/preference/choiced/hairstyle/create_informed_default_value(datum/preferences/preferences)
 	var/gender = preferences.read_preference(/datum/preference/choiced/gender)
-	var/species = preferences.read_preference(/datum/preference/choiced/species)
+	var/species = pick(intended_species)
 	var/datum/species/species_real = GLOB.species_prototypes[species]
 	if(!gender || !species_real || !species_real.sexes)
 		return ..()

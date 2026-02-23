@@ -11,6 +11,7 @@
 	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
 	icon_state = "brain_skrell"
 	shade_color = "deep blue"
+	actions_types = list(/datum/action/cooldown/mob_cooldown/noosphere)
 
 /obj/item/organ/brain/vox
 	name = "vox brain"
@@ -45,7 +46,6 @@
 	desc = "A basic cybernetic organ designed to mimic the operation of ears."
 	damage_multiplier = 1.5
 	bodypart_overlay = /datum/bodypart_overlay/mutant/cat_ears/tajara_ears/cybernetic
-	sprite_accessory_override = /datum/sprite_accessory/ears/cat/cybernetic
 	organ_flags = ORGAN_ROBOTIC
 	failing_desc = "seems to be broken."
 
@@ -56,12 +56,31 @@
 	damage_multiplier = 1
 
 /datum/bodypart_overlay/mutant/cat_ears/tajara_ears/cybernetic
+	sprite_datum = /datum/sprite_accessory/ears/cat/cybernetic
 	color_source = null
 	dyable = FALSE
+
+/obj/item/organ/tail/tajara
+	name = "tajara tail"
+
+	dna_block = /datum/dna_block/feature/accessory/tail_tajara
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/tajara
+	restyle_flags = EXTERNAL_RESTYLE_FLESH
+
+	wag_flags = WAG_ABLE
+
+/obj/item/organ/tail/tajara/get_butt_sprite()
+	return icon('icons/mob/butts.dmi', BUTT_SPRITE_CAT)
+
+/datum/bodypart_overlay/mutant/tail/tajara
+	feature_key = FEATURE_TAIL_TAJARA
+	sprite_datum = /datum/sprite_accessory/tails/tajara
 
 /obj/item/organ/tongue/tajara
 	name = "tajara tongue"
 	desc = "A fleshy, spiky muscle mostly used for licking fur."
+	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon_state = "tongue_tajara"
 	say_mod = "mrowls"
 	liked_foodtypes = SEAFOOD | RAW
 	disliked_foodtypes = GROSS | GORE | CLOTH
@@ -78,6 +97,43 @@
 /obj/item/organ/tongue/tajara/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/speechmod, replacements = speech_replacements, should_modify_speech = CALLBACK(src, PROC_REF(should_modify_speech)))
+
+/obj/item/organ/tongue/tajara/get_possible_languages()
+	RETURN_TYPE(/list)
+	. = ..()
+	. += /datum/language/tajara
+	return .
+
+/obj/item/organ/tongue/skrell
+	name = "skrell tongue"
+	desc = "A slimy muscle mostly used for snobby talking."
+	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon_state = "tongue_skrell"
+	say_mod = "warbles"
+	liked_foodtypes = VEGETABLES | GRAIN | FRUIT | NUTS
+	disliked_foodtypes = CLOTH | GROSS
+	toxic_foodtypes = TOXIC | GORE | MEAT | ALCOHOL | SEAFOOD | BUGS
+	languages_native = list(/datum/language/skrell)
+
+/obj/item/organ/tongue/skrell/get_possible_languages()
+	RETURN_TYPE(/list)
+	. = ..()
+	. += /datum/language/skrell
+	return .
+
+/obj/item/organ/tongue/vox
+	name = "vox tongue"
+	desc = "A fleshy muscle mostly used for screeching."
+	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon_state = "tongue_vox"
+	say_mod = "screeches"
+	languages_native = list(/datum/language/vox)
+
+/obj/item/organ/tongue/vox/get_possible_languages()
+	RETURN_TYPE(/list)
+	. = ..()
+	. += /datum/language/vox
+	return .
 
 /obj/item/organ/eyes/night_vision/tajara
 	name = "tajara eyes"
@@ -103,18 +159,27 @@
 	icon_state = "eyes_vox"
 	penlight_message = "have small pupils with no scleras"
 
-/obj/item/organ/tail/tajara
-	name = "tajara tail"
+/obj/item/organ/lungs/vox
+	name = "vox lungs"
+	desc = "A celadon alien-looking organ. It can only breathe pure nitrogen."
+	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon_state = "lungs_vox"
+	breath_noise = "an unnatural breathing sound"
+	safe_oxygen_min = 0 // We don't breathe this
+	safe_oxygen_max = 0.05
+	oxy_damage_type = TOX // In fact, for us it's basically like breathing plasma
+	safe_nitro_min = 16 // We breathe THIS!
 
-	dna_block = /datum/dna_block/feature/accessory/tail_tajara
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/tajara
-	restyle_flags = EXTERNAL_RESTYLE_FLESH
+#define SMOKER_ORGAN_HEALTH (STANDARD_ORGAN_THRESHOLD * 0.75)
+#define SMOKER_LUNG_HEALING (STANDARD_ORGAN_HEALING * 0.75)
 
-	wag_flags = WAG_ABLE
+/obj/item/organ/lungs/vox/vox_smoker
+	name = "smoker vox lungs"
+	desc = "A discolored alien-looking organ. It can only breathe pure nitrogen. And nicotine, apparently."
+	icon_state = "lungs_vox_smoker"
+	breath_noise = "an unnatural and rough breathing sound"
+	maxHealth = SMOKER_ORGAN_HEALTH
+	healing_factor = SMOKER_LUNG_HEALING
 
-/obj/item/organ/tail/tajara/get_butt_sprite()
-	return icon('icons/mob/butts.dmi', BUTT_SPRITE_CAT)
-
-/datum/bodypart_overlay/mutant/tail/tajara
-	feature_key = FEATURE_TAIL_TAJARA
-	sprite_datum = /datum/sprite_accessory/tails/tajara
+#undef SMOKER_ORGAN_HEALTH
+#undef SMOKER_LUNG_HEALING

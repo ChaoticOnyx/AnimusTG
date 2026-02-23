@@ -65,8 +65,14 @@
 	default_name_syllable_min = 2
 	default_name_syllable_max = 4
 
-/datum/language/vox/get_random_name()
-	return ..(FEMALE, 1, 6, 1)
+/datum/language/vox/get_random_name(
+	gender = NEUTER,
+	name_count = 1,
+	syllable_min = 6,
+	syllable_max = 6,
+	force_use_syllables = FALSE,
+)
+	return ..(FEMALE, 1, syllable_min, syllable_max, force_use_syllables)
 
 /datum/language_holder/tajara
 	understood_languages = list(
