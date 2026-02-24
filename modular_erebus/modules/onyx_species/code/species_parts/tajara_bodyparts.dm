@@ -1,11 +1,11 @@
 /obj/item/bodypart/head/tajara
-	icon_greyscale = 'modular_erebus/modules/onyx_species/icons/tajara/bodyparts.dmi'
+	icon_greyscale = 'modular_erebus/icons/onyx_species/tajara/bodyparts.dmi'
 	limb_id = SPECIES_TAJARA
 	is_dimorphic = TRUE
 	head_flags = HEAD_DEFAULT_FEATURES
 
 /obj/item/bodypart/chest/tajara
-	icon_greyscale = 'modular_erebus/modules/onyx_species/icons/tajara/bodyparts.dmi'
+	icon_greyscale = 'modular_erebus/icons/onyx_species/tajara/bodyparts.dmi'
 	limb_id = SPECIES_TAJARA
 	is_dimorphic = TRUE
 
@@ -13,7 +13,7 @@
 	return icon('icons/mob/butts.dmi', BUTT_SPRITE_CAT)
 
 /obj/item/bodypart/arm/left/tajara
-	icon_greyscale = 'modular_erebus/modules/onyx_species/icons/tajara/bodyparts.dmi'
+	icon_greyscale = 'modular_erebus/icons/onyx_species/tajara/bodyparts.dmi'
 	limb_id = SPECIES_TAJARA
 	unarmed_attack_verbs = list("slash", "scratch", "claw")
 	unarmed_attack_verbs = list("slashed", "scratched", "clawed")
@@ -24,7 +24,7 @@
 	unarmed_miss_sound = 'sound/items/weapons/slashmiss.ogg'
 
 /obj/item/bodypart/arm/right/tajara
-	icon_greyscale = 'modular_erebus/modules/onyx_species/icons/tajara/bodyparts.dmi'
+	icon_greyscale = 'modular_erebus/icons/onyx_species/tajara/bodyparts.dmi'
 	limb_id = SPECIES_TAJARA
 	unarmed_attack_verbs = list("slash", "scratch", "claw")
 	unarmed_attack_verbs = list("slashed", "scratched", "clawed")
@@ -35,9 +35,9 @@
 	unarmed_miss_sound = 'sound/items/weapons/slashmiss.ogg'
 
 /obj/item/bodypart/leg/left/tajara
-	icon_greyscale = 'modular_erebus/modules/onyx_species/icons/tajara/bodyparts.dmi'
+	icon_greyscale = 'modular_erebus/icons/onyx_species/tajara/bodyparts.dmi'
 	limb_id = SPECIES_TAJARA
 
 /obj/item/bodypart/leg/right/tajara
-	icon_greyscale = 'modular_erebus/modules/onyx_species/icons/tajara/bodyparts.dmi'
+	icon_greyscale = 'modular_erebus/icons/onyx_species/tajara/bodyparts.dmi'
 	limb_id = SPECIES_TAJARA

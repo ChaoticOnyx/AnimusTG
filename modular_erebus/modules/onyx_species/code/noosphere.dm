@@ -1,7 +1,7 @@
 /datum/action/cooldown/mob_cooldown/noosphere
 	name = "Noospheric Communication"
 	desc = "Communicate with other Skrell via the noosphere. You don't have to be awake."
-	button_icon = 'modular_erebus/modules/onyx_species/icons/skrell/actions.dmi'
+	button_icon = 'modular_erebus/icons/onyx_species/skrell/actions.dmi'
 	button_icon_state = "noosphere"
 	background_icon_state = "bg_default"
 	overlay_icon_state = "bg_default_border"
