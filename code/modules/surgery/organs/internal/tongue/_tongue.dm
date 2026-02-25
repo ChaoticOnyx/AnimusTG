@@ -187,6 +187,15 @@
 		new /regex(@"(\w)X", "g") = "$1KSSS",
 		new /regex(@"\bx([\-|r|R]|\b)", "g") = "ecks$1",
 		new /regex(@"\bX([\-|r|R]|\b)", "g") = "ECKS$1",
+		/* EREBUS EDIT ADDITION START -- PR #13 */
+		// Screw you, static list.
+		new /regex("с+", "g") = "ссс",
+		new /regex("С+", "g") = "ССС",
+		new /regex("ш+", "g") = "шшш",
+		new /regex("Ш+", "g") = "ШШШ",
+		new /regex("щ+", "g") = "щщ",
+		new /regex("Щ+", "g") = "ЩЩ",
+		/* EREBUS EDIT ADDITION END -- PR #13 */
 	)
 
 /obj/item/organ/tongue/lizard/Initialize(mapload)
