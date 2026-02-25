@@ -18,7 +18,7 @@
 /obj/item/tank/internals/emergency_nitrogen
 	name = "emergency nitrogen tank"
 	desc = "Used for emergencies. Contains very little nitrogen, so try to conserve it until you actually need it."
-	icon = 'modular_erebus/modules/onyx_species/icons/tanks.dmi'
+	icon = 'modular_erebus/icons/onyx_species/tanks.dmi'
 	icon_state = "emergency_nitrogen"
 	inhand_icon_state = "emergency_tank"
 	worn_icon_state = "emergency"

@@ -1,6 +1,6 @@
 /datum/sprite_accessory/tails/tajara
 	name = "Tajara Tail"
-	icon = 'modular_erebus/modules/onyx_species/icons/tajara/tajara_tails.dmi'
+	icon = 'modular_erebus/icons/onyx_species/tajara/tajara_tails.dmi'
 	icon_state = "plain"
 
 /datum/sprite_accessory/tails/tajara/none
@@ -14,7 +14,7 @@
 
 /datum/sprite_accessory/ears/tajara
 	name = "Tajara Ears"
-	icon = 'modular_erebus/modules/onyx_species/icons/tajara/tajara_ears.dmi'
+	icon = 'modular_erebus/icons/onyx_species/tajara/tajara_ears.dmi'
 	icon_state = "plain"
 	color_src = HAIR_COLOR
 
@@ -34,7 +34,7 @@
 // Tajara Hairstyles
 /datum/sprite_accessory/hair/tajara
 	name = "Bald"
-	icon = 'modular_erebus/modules/onyx_species/icons/tajara/hair.dmi'
+	icon = 'modular_erebus/icons/onyx_species/tajara/hair.dmi'
 	icon_state = "hair_bald"
 
 /datum/sprite_accessory/hair/tajara/bangs
@@ -100,7 +100,7 @@
 // Tajara Facial Hairstyles
 /datum/sprite_accessory/facial_hair/tajara
 	name = "Shaved"
-	icon = 'modular_erebus/modules/onyx_species/icons/tajara/facial.dmi'
+	icon = 'modular_erebus/icons/onyx_species/tajara/facial.dmi'
 	icon_state = "facial_shaved"
 
 /datum/sprite_accessory/facial_hair/tajara/goatee
@@ -130,7 +130,7 @@
 // Skrell Hairstyles
 /datum/sprite_accessory/hair/skrell
 	name = "Short Headtails"
-	icon = 'modular_erebus/modules/onyx_species/icons/skrell/hair.dmi'
+	icon = 'modular_erebus/icons/onyx_species/skrell/hair.dmi'
 	icon_state = "skrell_hair_m"
 
 /datum/sprite_accessory/hair/skrell/hair_f
@@ -288,7 +288,7 @@
 // Vox Hairstyles
 /datum/sprite_accessory/hair/vox
 	name = "Bald"
-	icon = 'modular_erebus/modules/onyx_species/icons/vox/hair.dmi'
+	icon = 'modular_erebus/icons/onyx_species/vox/hair.dmi'
 	icon_state = "bald"
 
 /datum/sprite_accessory/hair/vox/long

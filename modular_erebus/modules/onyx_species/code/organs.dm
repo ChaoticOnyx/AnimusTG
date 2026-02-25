@@ -1,14 +1,14 @@
 /obj/item/organ/brain/tajara
 	name = "tajara brain"
 	desc = "Some folks debate about the existence of these."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "brain_tajara"
 	shade_color = "violetish pink"
 
 /obj/item/organ/brain/skrell
 	name = "skrell brain"
 	desc = "It's slimy and kinda uncomfortable. Like skrell are."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "brain_skrell"
 	shade_color = "deep blue"
 	actions_types = list(/datum/action/cooldown/mob_cooldown/noosphere)
@@ -16,14 +16,14 @@
 /obj/item/organ/brain/vox
 	name = "vox brain"
 	desc = "Birdbrain! Literally."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "brain_vox"
 	shade_color = "bright celadon"
 
 /obj/item/organ/ears/tajara
 	name = "tajara ears"
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
-	worn_icon = 'modular_erebus/modules/onyx_species/icons/tajara/tajara_ears.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
+	worn_icon = 'modular_erebus/icons/onyx_species/tajara/tajara_ears.dmi'
 	icon_state = "tajara_ears"
 
 	dna_block = /datum/dna_block/feature/accessory/ears_tajara
@@ -79,7 +79,7 @@
 /obj/item/organ/tongue/tajara
 	name = "tajara tongue"
 	desc = "A fleshy, spiky muscle mostly used for licking fur."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "tongue_tajara"
 	say_mod = "mrowls"
 	liked_foodtypes = SEAFOOD | RAW
@@ -107,7 +107,7 @@
 /obj/item/organ/tongue/skrell
 	name = "skrell tongue"
 	desc = "A slimy muscle mostly used for snobby talking."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "tongue_skrell"
 	say_mod = "warbles"
 	liked_foodtypes = VEGETABLES | GRAIN | FRUIT | NUTS
@@ -124,7 +124,7 @@
 /obj/item/organ/tongue/vox
 	name = "vox tongue"
 	desc = "A fleshy muscle mostly used for screeching."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "tongue_vox"
 	say_mod = "screeches"
 	languages_native = list(/datum/language/vox)
@@ -138,7 +138,7 @@
 /obj/item/organ/eyes/night_vision/tajara
 	name = "tajara eyes"
 	desc = "Feline eyes. They're proficient at seeing in the dark."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "eyes_tajara"
 	low_light_cutoff = list(0, 15, 20)
 	medium_light_cutoff = list(0, 20, 35)
@@ -148,21 +148,21 @@
 
 /obj/item/organ/eyes/skrell
 	name = "skrell eyes"
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "eyes_skrell"
 	pupils_name = "dark voids"
 	penlight_message = "are totally black with no discernible features"
 
 /obj/item/organ/eyes/vox
 	name = "vox eyes"
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "eyes_vox"
 	penlight_message = "have small pupils with no scleras"
 
 /obj/item/organ/lungs/vox
 	name = "vox lungs"
 	desc = "A celadon alien-looking organ. It can only breathe pure nitrogen."
-	icon = 'modular_erebus/modules/onyx_species/icons/organs.dmi'
+	icon = 'modular_erebus/icons/onyx_species/organs.dmi'
 	icon_state = "lungs_vox"
 	breath_noise = "an unnatural breathing sound"
 	safe_oxygen_min = 0 // We don't breathe this

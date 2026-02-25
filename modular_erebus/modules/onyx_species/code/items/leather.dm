@@ -11,7 +11,7 @@
 	name = "skrell slime"
 	desc = "Gross and sticky! Not that much different from a live one, though."
 	singular_name = "piece of skrell slime"
-	icon = 'modular_erebus/modules/onyx_species/icons/leather.dmi'
+	icon = 'modular_erebus/icons/onyx_species/leather.dmi'
 	icon_state = "sheet-slime"
 	alpha = 220
 	inhand_icon_state = null
