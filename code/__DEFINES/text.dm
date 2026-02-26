@@ -16,8 +16,14 @@
  * To use a step other than the default in the macro, specify it in a span style.
  * For example: MAPTEXT_PIXELLARI("<span style='font-size: 24pt'>Some large maptext here</span>")
  */
+
+/* EREBUS EDIT START -- cyrillic fonts PR #14 */
 /// Large size (ie: context tooltips) - Size options: 12pt 24pt.
-#define MAPTEXT_PIXELLARI(text) {"<span style='font-family: \"Pixellari\"; font-size: 12pt; -dm-text-outline: 1px black'>[##text]</span>"}
+// #define MAPTEXT_PIXELLARI(text) {"<span style='font-family: \"Pixellari\"; font-size: 12pt; -dm-text-outline: 1px black'>[##text]</span>"}
+
+#define MAPTEXT_PIXELLARI(text) {"<span style='font-family: \"Pix Cyrillic\"; font-size: 12pt; -dm-text-outline: 1px black'>[##text]</span>"}
+
+/* EREBUS EDIT END -- cyrillic fonts PR #14 */
 
 /// Standard size (ie: normal runechat) - Size options: 6pt 12pt 18pt.
 #define MAPTEXT_GRAND9K(text) {"<span style='font-family: \"Grand9K Pixel\"; font-size: 6pt; -dm-text-outline: 1px black'>[##text]</span>"}
