@@ -1,0 +1,4 @@
+author: "TheUnknownOne"
+delete-after: True
+changes:
+  - rscadd: "Рунчат теперь нормально работает с кириллицей."
