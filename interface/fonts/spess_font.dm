@@ -4,7 +4,11 @@
 /// Base font
 /datum/font/spessfont
 	name = "Spess Font"
-	font_family = 'interface/fonts/SpessFont.ttf'
+	/* EREBUS EDIT START -- cyrillic fonts PR #14 */
+	//font_family = 'interface/fonts/SpessFont.ttf'
+
+	font_family = 'interface/fonts/SpessFontRus.ttf'
+	/* EREBUS EDIT END -- cyrillic fonts PR #14 */
 
 /// For icon overlays
 /// Spess Font 6pt metrics generated using Lummox's dmifontsplus (https://www.byond.com/developer/LummoxJR/DmiFontsPlus)
