@@ -26,7 +26,8 @@
 				[SSticker.totalPlayersReady] players ready<br /> \
 				[SSticker.total_admins_ready] / [length(GLOB.admins)] admins ready</span>"
 		else
-			new_maptext = "<span style='text-align: center; vertical-align: middle; font-size: 12px'>[time_remaining_str()]</span><br /> \ // Erebus edit -- original uses 18px font-size
+			// Erebus edit -- original uses 18px font-size
+			new_maptext = "<span style='text-align: center; vertical-align: middle; font-size: 12px'>[time_remaining_str()]</span><br /> \
 				<span style='text-align: center; vertical-align: middle'>[LAZYLEN(GLOB.clients)] player\s</span>"
 
 	maptext = MAPTEXT(new_maptext)
