@@ -6854,6 +6854,7 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
+#include "modular_erebus\master_files\code\_onclick\hud\new_player.dm"
 #include "modular_erebus\master_files\code\controllers\subsystem\sprite_accessories.dm"
 #include "modular_erebus\master_files\code\datums\dna\blocks\dna_identity_block.dm"
 #include "modular_erebus\master_files\code\datums\keybindings\human.dm"
