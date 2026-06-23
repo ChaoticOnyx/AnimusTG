@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>modular_erebus/modules/onyx_species/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_erebus/modules/onyx_species/readme.md <a href="https://github.com/ChaoticOnyx/AnimusTG/blob/cb6ec150b03368de7835ddb4c7e0e0a488c7d7a2/modular_erebus/modules/onyx_species/readme.md"><img src="git.png" width="16" height="16" title="modular_erebus/modules/onyx_species/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2 id="название-расы-с-onyxbay">Название: Расы с OnyxBay</h2>
+<p><strong>MODULE ID:</strong> onyx_species</p>
+<p><strong>Pull Request:</strong> https://github.com/ChaoticOnyx/AnimusTG/pull/5</p>
+<h3 id="описание">Описание:</h3>
+<p>Добавляет некоторые расы с билда OnyxBay: таяр, скреллов и воксов. Расы доступны для выбора в сетапе.</p>
+<!-- TODO: описание механа каждой из рас -->
+<h3 id="изменения-файлов-или-проков-tg">Изменения файлов или проков TG:</h3>
+<ul>
+<li>
+<p><code>code\controllers\subsystem\sprite_accessories.dm</code>
+-- <code>/datum/controller/subsystem/accessories/setup_lists()</code> -- добавлены списки со всеми волосами и бородами, списки волос, доступных только таярам, скреллам и воксам, а также список бород, доступных только таярам.
+-- <code>/datum/controller/subsystem/accessories/init_sprite_accessory_subtypes(prototype, add_blank = FALSE)</code> -- логика для создания вышеописанных списков.</p>
+</li>
+<li>
+<p><code>code\modules\client\preferences\species_features\basic.dm</code> -- изменена логика проков у преференсов волос и бороды для реализации эксклюзивных для определённых рас причёсок и бород.
+-- <code>/datum/preference/choiced/hairstyle/New()</code>
+-- <code>/datum/preference/choiced/hairstyle/has_relevant_feature(datum/preferences/preferences)</code>
+-- <code>/datum/preference/choiced/hairstyle/init_possible_values()</code>
+-- <code>/datum/preference/choiced/hairstyle/icon_for(value)</code>
+-- <code>/datum/preference/choiced/hairstyle/apply_to_human(mob/living/carbon/human/target, value)</code>
+-- <code>/datum/preference/choiced/hairstyle/create_informed_default_value(datum/preferences/preferences)</code>
+-- А также аналогичные проки у типа <code>/datum/preference/choiced/facial_hairstyle</code>.</p>
+</li>
+<li>
+<p><code>code\modules\mob\living\carbon\human\_species.dm</code>
+-- <code>/datum/species/New()</code> -- новые переменные со списками волос и бород, доступных данной расе.</p>
+</li>
+<li>
+<p><code>code\modules\surgery\bodyparts\head_hair_and_lips.dm</code>
+-- <code>/obj/item/bodypart/head/get_hair_and_lips_icon(dropped)</code> -- оверрайднут весь прок ради двух строчек (боже помилуй). Используются новые списки волос и бород из <code>SSaccessories</code>. Также убрано <code>SHOULD_CALL_PARENT(TRUE)</code> в базовом файле, чтобы не ругались проверки на гитхабе.</p>
+</li>
+<li>
+<p><code>code\modules\holiday\holidays.dm</code> -- косметические изменения строк: ящеры и их язык переименованы в унатхов и Синта'унати соответственно.
+-- <code>/datum/holiday/draconic_day/greet()</code>
+-- <code>/datum/holiday/draconic_day/getStationPrefix()</code></p>
+</li>
+<li>
+<p><code>code\modules\mob\living\carbon\human\species_types\lizardpeople.dm</code> -- аналогично вышеописанному.
+-- <code>/datum/species/lizard/get_physical_attributes()</code>
+-- <code>/datum/species/lizard/ashwalker/get_physical_attributes()</code>
+-- <code>/datum/species/lizard/silverscale/get_physical_attributes()</code></p>
+</li>
+<li>
+<p><code>code/datums/dna/blocks/dna_identity_block.dm</code> -- Используются новые списки волос и бород из <code>SSaccessories</code>.
+-- <code>/datum/dna_block/identity/hair_style/create_unique_block(mob/living/carbon/human/target)</code>
+-- <code>/datum/dna_block/identity/hair_style/apply_to_mob(mob/living/carbon/human/target, dna_hash)</code>
+-- <code>/datum/dna_block/identity/facial_style/create_unique_block(mob/living/carbon/human/target)</code>
+-- <code>/datum/dna_block/identity/facial_style/apply_to_mob(mob/living/carbon/human/target, dna_hash)</code></p>
+</li>
+<li>
+<p><code>modular_erebus/master_files/code/game/objects/structures/mirror.dm</code> -- аналогично.
+-- <code>/obj/structure/mirror/change_beard(mob/living/carbon/human/beard_dresser)</code>
+-- <code>/obj/structure/mirror/change_hair(mob/living/carbon/human/hairdresser)</code>
+-- <code>/obj/structure/mirror/magic/change_beard(mob/living/carbon/human/beard_dresser)</code></p>
+</li>
+<li>
+<p><code>code/modules/mob/dead/observer/observer.dm</code> -- аналогично.
+-- <code>/mob/dead/observer/update_icon(updates=ALL, new_form)</code></p>
+</li>
+<li>
+<p><code>code/modules/reagents/chemistry/reagents/other_reagents.dm</code> -- аналогично.
+-- <code>/datum/reagent/barbers_aid/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume, show_message=TRUE, touch_protection = 0)</code>
+== <code>/datum/reagent/baldium/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume, show_message=TRUE, touch_protection = 0)</code></p>
+</li>
+</ul>
+<p><strong>Изменение TGUI:</strong></p>
+<ul>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\species_features.tsx</code> -- добавлено что-то там, чтобы работал выбор хвостов и ушей таяр в лодауте. I don't dig TGUI.</li>
+</ul>
+<h3 id="дефайны">Дефайны:</h3>
+<p>SPECIES_TAJARA -- &quot;tajara&quot;
+SPECIES_SKRELL -- &quot;skrell&quot;
+SPECIES_VOX -- &quot;vox&quot;</p>
+<p>FEATURE_EARS_TAJARA -- &quot;ears_tajara&quot;
+FEATURE_TAIL_TAJARA -- &quot;tail_tajara&quot;</p>
+<h3 id="авторы">Авторы:</h3>
+<p><strong>TheUnknownOne (aka Tim Ermolt)</strong> -- код, работа со спрайтами;
+<strong>FloweYStyle</strong> -- геймдизайн, помощь с кодом, моральная поддержка.</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/ChaoticOnyx/AnimusTG/tree/cb6ec150b03368de7835ddb4c7e0e0a488c7d7a2">cb6ec15</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>
